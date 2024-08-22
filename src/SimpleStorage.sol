@@ -25,4 +25,9 @@ contract SimpleStorage {
     function retrieve() public view returns (uint256) {
         return myFavoriteNumber;
     }
+
+    function getPerson(uint256 index) public view returns (Person memory) {
+        require(index < listOfPeople.length, "Index out of bounds");
+        return listOfPeople[index];
+    }
 }
